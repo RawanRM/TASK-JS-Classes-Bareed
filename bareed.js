@@ -14,9 +14,9 @@ class Point {
     this.x = x;
     this.y = y;
   }
-
+  //point.x THIS WILL ACCESS the "x" part of point and so on.
   distanceTo = point => {
-    let xDelta = this.x - point.x;
+    let xDelta = this.x - point.x; 
     let yDelta = this.y - point.y;
     return Math.sqrt(xDelta * xDelta + yDelta * yDelta); // PYTHAGORAS!
   };
@@ -43,11 +43,17 @@ class Point {
  **********************************************************/
 class Wallet {
   // implement Wallet!
-  constructor(money = 0) {}
+  constructor(money = 0) {
+    this.money = money;
+  }
 
-  credit = amount => {};
+  credit = amount => {
+    this.money += amount;
+  };
 
-  debit = amount => {};
+  debit = amount => {
+    this.money -= amount;
+  };
 }
 
 /**********************************************************

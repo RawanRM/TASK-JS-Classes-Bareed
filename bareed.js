@@ -91,11 +91,31 @@ class Person {
  *         - Moves to the customer's location
  *         - Transfers money from the customer's wallet
  *           to the vendor's wallet
+ * 
+ * //how many icecreams the customer orders + price of icecream = TOTAL
+ * now subtract TOTAL from customer's wallet
+ * ADD TOTAL to vendor's wallet.
  *
  * new vendor = new Vendor(name, x, y);
  **********************************************************/
-class Vendor {
+class Vendor extends Person{
   // implement Vendor!
+  constructor(name, x, y){
+    super(name, x, y);
+    this.wallet = new Wallet(0);
+  }
+  range = 10;
+  price = 2;
+
+  sellTo = (customer,numberOfIceCreams) => {
+    this.location = moveTo(customer.location);
+    let totalPrice = numberOfIceCreams + this.price;
+    
+
+
+
+
+  }
 }
 
 /**********************************************************
@@ -114,8 +134,10 @@ class Vendor {
  *
  * new customer = new Customer(name, x, y);
  **********************************************************/
-class Customer {
+class Customer extends Person{
   // implement Customer!
+  
+  
 }
 
 export { Point, Wallet, Person, Customer, Vendor };
